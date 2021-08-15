@@ -1,0 +1,5 @@
+.apperance {
+  min-height: fit-content !important;
+  max-height: max-content !important;
+  background-color: blue !important;
+}

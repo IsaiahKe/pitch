@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{%if title%}
+<title>{{title}}</title>
+{%else%}
+
+<title>Welcome</title>
+{%endif%}
+
+{% block content %}
+{{title}}
+{% endblock %}

@@ -1,0 +1,28 @@
+{%extends 'bootstrap/base.html'%}
+
+<html>
+{%block head%}
+
+{% block styles %}
+{supper()}
+<link type="stylesheet" href="{{ url_for(filename='css/navigation.css')}}">
+ {% endblock %}
+ 
+{%if title%}
+<title>{{title}}</title>
+{% else %}
+<title>Undefined</title>
+{% endif %}
+
+{% block navbar %}
+{% include "navigation.html" %}
+{% endblock %}
+{% endblock %}
+    <body>
+        {% block content %}
+        
+        
+        {% endblock %}
+        
+    </body>
+</html>

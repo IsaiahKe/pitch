@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{%import 'bootstrap/wtf.html' as wtf%}
+{%import 'macros.html' as macro %}
+
+{%if title%}
+<title>{{title}}</title>
+{%else%}
+<title>Processing..</title>
+{%endif%}
+
+
+
+{% block content %}
+
+<div class="col-md-8" >
+    {{macro.displayComment(item)}}
+</div>
+<div class="container" style="margin:0px auto;">
+    <div class="col-md-6">
+        {{wtf.quick_form(form)}}
+    </div>
+</div>
+{% endblock %}

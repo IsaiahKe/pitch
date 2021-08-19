@@ -42,8 +42,9 @@
             <h4>Actions</h4>
             
              <div class="row ">
-               <form method="post"> <div class="col-md-3"><button> +vote:{{pitch.likes}}</button></div></form>
-                <form method="post"><div class="col-md-3"><button> -vote:{{pitch.dislikes}}</button></div></form>
+                <div class="col-md-3"><button> +vote:{{pitch.likes}}</button></div>
+                <div class="col-md-3"><button> -vote:{{pitch.dislikes}}</button></div>
+                <div class="col-md-3"><a href="profile/{{pitch.id}}/delete"><button style="color: white;background:red;">Delete</button></a></div>
         </div>
         </div>
         {%endfor%}

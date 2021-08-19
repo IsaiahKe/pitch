@@ -4,7 +4,7 @@ import os
 class Config:
 
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI =os.environ.get('DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://izzie:Access@localhost/pitch'
     UPLOADED_PHOTOS_DEST = 'app/static/img'
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
@@ -19,8 +19,7 @@ class DevConfig(Config):
 
 class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI=os.getenv('DATABASE_URL')
-    if SQLALCHEMY_DATABASE_URI.startswith('postgres://'):
-        SQLALCHEMY_DATABASE_URI=SQLALCHEMY_DATABASE_URI.replace("postgres://","postgresql://",1)
+  
 class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://izzie:Access@localhost/pitch-test'
 

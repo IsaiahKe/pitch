@@ -6,7 +6,7 @@ from ..models import Pitch, User,Comment
 from .. import db
 from flask_login import current_user
 
-@main.route('/',methods=['POST','GET'])
+@main.route('/')
 def index():
     
     title="Home"

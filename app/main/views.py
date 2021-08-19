@@ -56,3 +56,31 @@ def comment(pitchid):
             feedback.save()
             
     return render_template('comment.html',form=form,item=item)
+@main.route('/<pid>/upvote')
+@login_required
+def uvote(pid):
+    pitch=Pitch.query.filter_by(id=pid).first()
+    title="Home"
+    items=Pitch.query.order_by(Pitch.posted).all()
+
+    
+    pitch.likes=pitch.likes+1
+    print(pitch.likes)
+    db.session.commit()
+    redirect(url_for('main.index'))
+    return render_template('index.html',title=title,items=items)
+        
+@main.route('/<pid>/downvote')
+@login_required
+def dvote(pid):
+    pitch=Pitch.query.filter_by(id=pid).first()
+    title="Home"
+    items=Pitch.query.order_by(Pitch.posted).all()
+
+    
+    pitch.dislikes=pitch.dislikes+1
+    
+    db.session.commit()
+    redirect(url_for('main.index'))
+    return render_template('index.html',title=title,items=items)  
+    

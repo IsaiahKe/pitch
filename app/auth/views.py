@@ -7,7 +7,7 @@ from werkzeug.utils import secure_filename
 from ..mail import sendmail
 
 from . import auth
-from ..models import Pitch, User
+from ..models import Comment, Pitch, User
 from .forms import UserRegistration, UserLogin
 from .. import db, photos
 
@@ -93,3 +93,16 @@ def upload():
         user.img = path
         db.session.commit()
         redirect(url_for('main.index'))
+        
+@auth.route('/profile/<pid>/delete')
+@login_required
+def unlink(pid):
+    
+    comment=Comment.query.filter_by(parentid=pid).delete()
+    pitch=Pitch.query.filter_by(id=pid).delete()
+    comment
+    db.session.commit()
+    pitch
+    db.session.commit()
+    return redirect(url_for('auth.profile'))
+    

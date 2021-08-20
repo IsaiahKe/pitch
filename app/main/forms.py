@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import TextAreaField,SubmitField,TextField
 from wtforms.validators import Required
 class ProfileUpdate(FlaskForm):
-    bio=TextAreaField(label="Bio Data",validators=[Required()])
+    bio =TextAreaField(label="Bio Data",validators=[Required()])
     
     save=SubmitField('Save')
     

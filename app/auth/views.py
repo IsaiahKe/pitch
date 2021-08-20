@@ -89,7 +89,7 @@ def upload():
     user = User.query.filter_by(username=name).first()
     if 'photo' in request.files:
         filename = photos.save(request.files['photo'])
-        path = f'img{filename}'
+        path = f'img/{filename}'
         user.img = path
         db.session.commit()
         redirect(url_for('main.index'))

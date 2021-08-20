@@ -34,7 +34,7 @@ class User(UserMixin,db.Model):
 class Pitch(db.Model):
     __tablename__="pitches"
     id=db.Column(db.Integer,primary_key=True)
-    content=db.Column(db.String(255))
+    content=db.Column(db.String())
     likes=db.Column(db.Integer)
     posted=db.Column(db.DateTime,default=datetime.now)
     dislikes=db.Column(db.Integer)

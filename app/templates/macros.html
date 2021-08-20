@@ -3,8 +3,8 @@
 {%for pitch in pitchlist%}
 
     
-        <div class="card col-md-4" style="background-color: rgb(194, 194, 197); padding:20px;margin:5px;max-width:500px;height:310px;max-height:400px">
-            <div class="row"style="height:120px">{{pitch.content}}</div>
+        <div class="card col-md-4" style="background-color: rgb(194, 194, 197); padding:20px;margin:5px;max-width:550px;height:310px;max-height:500px;min-width:400px;">
+            <div class="row"style="height:120px;overflow-x: auto;">{{pitch.content}}</div>
 
             <div class="row" style="margin-left:10px;padding-left:10px">
                 <h4>Details</h4>
@@ -14,13 +14,13 @@
             </div>
             <h4>Actions</h4>
             
-             <div class="row ">
-                <div class="col-md-3">
+             <div class="row" style="width:100%;min-width:200px">
+                <div class="col-sm-3">
                     <a href="/{{pitch.id}}/upvote"><button a > +vote:{{pitch.likes}}</button></a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-sm-3">
                     <a href="/{{pitch.id}}/downvote"><button> -vote:{{pitch.dislikes}}</button></a></div>
-                <div class="col-md-3"><a href="/{{pitch.id}}/comment"><button>More</button></a></div>
+                <div class="col-sm-3"><a href="/{{pitch.id}}/comment"><button>More</button></a></div>
         </div>
         </div>
 
@@ -31,7 +31,7 @@
 
     
         <div class="card col-md-12" style="background-color: rgb(194, 194, 197); padding:20px;margin:5px;max-width:600px;height:310px;max-height:400px">
-            <div class="row"style="height:120px">{{pitch.content}}</div>
+            <div class="row"style="height:120px;overflow-x: auto;">{{pitch.content}}</div>
 
             <div class="row" style="margin-left:10px;padding-left:10px">
                 <h4>Details</h4>
@@ -53,7 +53,7 @@
 {%for comment in commentList%}
 
         <div class="card col-md-12" style="background-color: #ffdead; padding:20px;margin:5px;min-width:600px;height:200px;max-height:300px;">
-            <div class="row"style="height:160px">{{comment.content}}</div>
+            <div class="row"style="height:120px;overflow-x: auto;">{{comment.content}}</div>
 
             <div class="row" style="margin-left:10px;padding-left:10px">
             Posted by: {{comment.owner}}
